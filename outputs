@@ -1,0 +1,63 @@
+Ex19:
+
+URL to rep:
+https://github.com/Linus1994/ex19rep.git
+
+
+Instructions to reproduce your result:
+first save the bag files you want to analyze in a folder called bags2 within /home/username (= ~ in command line below)
+then of all run: git clone https://github.com/Linus1994/ex19rep.git
+then to enter: cd ex19rep
+then build: dts devel build -f --arch amd64
+then run code: docker run -it --rm -e ROSBAG='/home/amod19-rh3-ex-record-Linus_Lingg.bag' -v ~/bags2:/home duckietown/ex19rep:v1-amd64
+where: '/home/amod19-rh3-ex-record-Linus_Lingg.bag' should be the path to your mounted bag file which is stored in ~/bags2
+
+Command used:
+
+docker run -it --rm -e ROSBAG='/home/amod19-rh3-ex-record-Linus_Lingg.bag' -v ~/bags2:/home duckietown/ex19rep:v1-amd64
+
+Ananlyzis of Bag we provided:
+
+/tesla/camera_node/camera_info
+ num_messages: 653
+ Period:
+     min: 19413949 ns
+     max: 47858953 ns
+     average: 33314640 ns
+     median: 33293604 ns
+
+/tesla/line_detector_node/segment_list
+ num_messages: 198
+ Period:
+     min: 65718889 ns
+     max: 198918819 ns
+     average: 109746608 ns
+     median: 101026058 ns
+
+/tesla/wheels_driver_node/wheels_cmd
+ num_messages: 74
+ Period:
+     min: 88027001 ns
+     max: 4196969986 ns
+     average: 266984439 ns
+     median: 126358032 ns
+	 
+Analyzis of our own Bag:
+
+/linuslingg/camera_node/image/compressed :
+ num_messages: 898
+ Period:
+     min: 11790991 ns
+     max: 58901071 ns
+     average: 33311676 ns
+     median: 33161879 ns
+
+/linuslingg/wheels_driver_node/wheels_cmd :
+ num_messages: 364
+ Period:
+     min: 18985034 ns
+     max: 237786055 ns
+     average: 81041556 ns
+     median: 68275928 ns
+	 
+	 

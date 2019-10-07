@@ -1,5 +1,5 @@
 # parameters
-ARG REPO_NAME="<REPO_NAME_HERE>"
+ARG REPO_NAME="ex19rep"
 
 # ==================================================>
 # ==> Do not change this code
@@ -42,6 +42,7 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
 
 # define launch script
 ENV LAUNCHFILE "${REPO_PATH}/launch.sh"
+ENV ROSBAG='/home/example_rosbag_H3.bag'
 
 # define command
 CMD ["bash", "-c", "${LAUNCHFILE}"]
